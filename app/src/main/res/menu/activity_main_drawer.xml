@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_hotfood"
+            android:icon="@drawable/icon_monan"
+            android:title="Thống kê món ăn bán chạy" />
+        <item
+            android:id="@+id/nav_hotdrink"
+            android:icon="@drawable/icon_thucuong"
+            android:title="Thống kê thức uống bán chạy"/>
+        <item
+            android:id="@+id/nav_doanhthu"
+            android:icon="@drawable/icon_doanhthu"
+            android:title="Thống kê doanh thu" />
+        <item
+            android:id="@+id/nav_tonkho"
+            android:icon="@drawable/icon_stock"
+            android:title="Thống kê tồn kho" />
+        <item
+            android:id="@+id/nav_invoice"
+            android:icon="@drawable/icon_bill"
+            android:title="Thống kê hóa đơn" />
+        <item
+            android:id="@+id/nav_customer"
+            android:icon="@drawable/icon_customer"
+            android:title="Thống kê khách hàng" />
+        <item
+            android:id="@+id/nav_support"
+            android:icon="@drawable/icon_support"
+            android:title="Hỗ trợ" />
+        <item
+            android:id="@+id/nav_logout"
+            android:icon="@drawable/icon_logout"
+            android:title="Đăng xuất" />
+    </group>
+    <!--<group android:checkableBehavior="single">-->
+        <!--<item-->
+            <!--android:title="Phiên bản 1.0.0"/>-->
+    <!--</group>-->
+
+</menu>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/nv_all"
+        android:title="Tất cả"/>
+    <item android:id="@+id/nv_using"
+        android:title="Sử dụng"/>
+    <item android:id="@+id/nv_avalaible"
+        android:title="Còn trống"/>
+</menu>

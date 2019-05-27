@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="2dp"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:padding="5dp"
+            android:textSize="16dp"
+            android:text="Tên món: Đây là món ăn dùng để test"
+            android:id="@+id/tv_tenmon"/>
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:padding="5dp"
+            android:textSize="16dp"
+            android:text="Loại món: LM001"
+            android:id="@+id/tv_loaimon"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="35dp"
+            android:text="Mã món: SP001"
+            android:padding="5dp"
+            android:textSize="16dp"
+            android:id="@+id/tv_mamon"/>
+        <TextView
+            android:layout_width="250dp"
+            android:layout_height="35dp"
+            android:text="Số lượng: 1000"
+            android:padding="5dp"
+            android:textSize="16dp"
+            android:id="@+id/tv_soluongton"/>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:id="@+id/tv_bottom_details_list"
+        android:layout_marginTop="5dp"
+        android:background="@color/text_title_color"/>
+</LinearLayout>
