@@ -20,9 +20,9 @@ public class NguyenLieuAdapter extends RecyclerView.Adapter<NguyenLieuAdapter.My
     public Context context;
     int layout;
     public LayoutInflater mLayoutInflater;
-    public List<NguyenLieu> nguyenLieuList = new ArrayList<>();
+    public ArrayList<NguyenLieu> nguyenLieuList;
 
-    public NguyenLieuAdapter(Context context, int layout, List<NguyenLieu> nguyenLieuList) {
+    public NguyenLieuAdapter(Context context, int layout, ArrayList<NguyenLieu> nguyenLieuList) {
         this.context = context;
         this.layout = layout;
         this.nguyenLieuList = nguyenLieuList;
@@ -39,10 +39,10 @@ public class NguyenLieuAdapter extends RecyclerView.Adapter<NguyenLieuAdapter.My
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder myViewHolder, int i) {
         NguyenLieu nguyenLieu = nguyenLieuList.get(i);
-        myViewHolder.tv_loaimon.setText(nguyenLieu.getLoaiNguyenLieu());
+        myViewHolder.tv_mamon.setText(nguyenLieu.getMaNguyenLieu()+"");
         myViewHolder.tv_tenmon.setText(nguyenLieu.getTenNguyenLieu());
-        myViewHolder.tv_mamon.setText(nguyenLieu.getMaNguyenLieu());
-        myViewHolder.tv_soluongton.setText(nguyenLieu.getSoLuong());
+        myViewHolder.tv_soluongton.setText(nguyenLieu.getTonKho());
+        myViewHolder.tv_loaimon.setText(nguyenLieu.getMaLoaiNguyenLieu());
     }
 
     @Override
@@ -58,7 +58,6 @@ public class NguyenLieuAdapter extends RecyclerView.Adapter<NguyenLieuAdapter.My
             tv_mamon = itemView.findViewById(R.id.tv_mamon);
             tv_loaimon = itemView.findViewById(R.id.tv_loaimon);
             tv_soluongton = itemView.findViewById(R.id.tv_soluongton);
-
             //sự kiện click của item
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override

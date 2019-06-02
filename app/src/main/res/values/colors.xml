@@ -11,4 +11,7 @@
     <color name="color_gray">#FFE8E8E9</color>
     <color name="backgound_main_bold">#2f753a</color>
     <color name="text_title_color">#cfcece</color>
+    <color name="text_name_KH">#236194</color>
+    <color name="text_no_title">#777777</color>
+    <color name="text_title">#000</color>
 </resources>

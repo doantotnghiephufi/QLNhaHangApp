@@ -2,58 +2,62 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="@dimen/nav_header_height"
+    android:layout_height="150dp"
     android:background="@color/backgound_main"
     android:gravity="bottom"
-    android:orientation="horizontal"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingTop="32dp"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingBottom="10dp"
+    android:orientation="vertical"
     android:theme="@style/ThemeOverlay.AppCompat.Dark">
-
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="10dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="5dp"
         android:layout_gravity="center"
         android:contentDescription="@string/nav_header_desc"
-        app:srcCompat="@drawable/icon_account" />
+        app:srcCompat="@drawable/icon_report_128" />
 
-    <LinearLayout
-        android:layout_width="170dp"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:layout_marginLeft="15dp">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:paddingTop="@dimen/nav_header_vertical_spacing"
-            android:text="Admin"
-            android:layout_gravity="center_vertical"
-            android:textColor="@color/color_white"
-            android:textSize="16dp"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_gravity="center"
+        android:textColor="@color/color_white"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:text="Phiên bản 1.0.0"/>
+    <!--<LinearLayout-->
+        <!--android:layout_width="170dp"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:orientation="vertical"-->
+        <!--android:layout_marginLeft="15dp">-->
+        <!--<TextView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="30dp"-->
+            <!--android:paddingTop="@dimen/nav_header_vertical_spacing"-->
+            <!--android:text="Admin"-->
+            <!--android:layout_gravity="center_vertical"-->
+            <!--android:textColor="@color/color_white"-->
+            <!--android:textSize="16dp"-->
+            <!--android:textAppearance="@style/TextAppearance.AppCompat.Body1" />-->
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="25dp"
-            android:text="Admin food"
-            android:textSize="13dp"
-            android:layout_marginTop="2dp"
-            android:textColor="@color/color_white"/>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="25dp"
-        android:layout_height="20dp"
-        android:layout_marginBottom="5dp">
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:contentDescription="@string/nav_header_desc"
-            app:srcCompat="@drawable/icon_arrow" />
-    </LinearLayout>
+        <!--<TextView-->
+            <!--android:id="@+id/textView"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="25dp"-->
+            <!--android:text="Admin food"-->
+            <!--android:textSize="13dp"-->
+            <!--android:layout_marginTop="2dp"-->
+            <!--android:textColor="@color/color_white"/>-->
+    <!--</LinearLayout>-->
+    <!--<LinearLayout-->
+        <!--android:layout_width="25dp"-->
+        <!--android:layout_height="20dp"-->
+        <!--android:layout_marginBottom="5dp">-->
+        <!--<ImageView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_gravity="center"-->
+            <!--android:contentDescription="@string/nav_header_desc"-->
+            <!--app:srcCompat="@drawable/icon_arrow" />-->
+    <!--</LinearLayout>-->
 </LinearLayout>

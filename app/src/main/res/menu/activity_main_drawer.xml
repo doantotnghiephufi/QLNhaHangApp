@@ -4,6 +4,9 @@
     tools:showIn="navigation_view">
 
     <group android:checkableBehavior="single">
+        <item android:id="@+id/nav_home"
+            android:icon="@drawable/icon_home"
+            android:title="Trang chủ"/>
         <item
             android:id="@+id/nav_hotfood"
             android:icon="@drawable/icon_monan"
@@ -19,11 +22,11 @@
         <item
             android:id="@+id/nav_tonkho"
             android:icon="@drawable/icon_stock"
-            android:title="Thống kê tồn kho" />
-        <item
-            android:id="@+id/nav_invoice"
-            android:icon="@drawable/icon_bill"
-            android:title="Thống kê hóa đơn" />
+            android:title="Thống kê nguyên liệu" />
+        <!--<item-->
+            <!--android:id="@+id/nav_invoice"-->
+            <!--android:icon="@drawable/icon_bill"-->
+            <!--android:title="Thống kê hóa đơn" />-->
         <item
             android:id="@+id/nav_customer"
             android:icon="@drawable/icon_customer"
@@ -31,15 +34,10 @@
         <item
             android:id="@+id/nav_support"
             android:icon="@drawable/icon_support"
-            android:title="Hỗ trợ" />
-        <item
-            android:id="@+id/nav_logout"
-            android:icon="@drawable/icon_logout"
-            android:title="Đăng xuất" />
-    </group>
-    <!--<group android:checkableBehavior="single">-->
+            android:title="Giới thiệu" />
         <!--<item-->
-            <!--android:title="Phiên bản 1.0.0"/>-->
-    <!--</group>-->
-
+            <!--android:id="@+id/nav_logout"-->
+            <!--android:icon="@drawable/icon_logout"-->
+            <!--android:title="Đăng xuất" />-->
+    </group>
 </menu>

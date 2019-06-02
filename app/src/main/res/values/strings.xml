@@ -1,9 +1,23 @@
 <resources>
-    <string name="app_name">QLNhaHangApp</string>
+    <string name="app_name">Báo cáo thống kê</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">Android Studio</string>
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
+
+    <!--sign in-->
+    <string name="title_top">Sign In</string>
+    <string name="title_bottom">Login to your account</string>
+    <string name="sign_in_user_name">Username or e-mail</string>
+    <string name="sign_in_password">Password</string>
+    <string name="sign_in_button">Sign In</string>
+    <string name="forgot_password">Forgot password?</string>
+    <string name="sign_in_facebook">LOGIN WITH FACEBOOK</string>
+    <string name="sign_in_google">LOGIN WITH GOOGLE</string>
+    <string name="dont_have_account">Don\'t you have an account?</string>
+    <string name="sign_up_now">Sign up now!</string>
+    <string name="keep_me_sign">Keep me Signed</string>
+
 </resources>

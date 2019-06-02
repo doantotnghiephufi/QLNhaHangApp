@@ -7,14 +7,26 @@ import android.support.v4.app.Fragment;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.Volley;
+import com.example.nguyenhuongit.qlnhahangapp.Adapter.KhachHangAdapter;
 import com.example.nguyenhuongit.qlnhahangapp.Adapter.NguyenLieuAdapter;
+import com.example.nguyenhuongit.qlnhahangapp.Data.KhachHang;
 import com.example.nguyenhuongit.qlnhahangapp.Data.NguyenLieu;
 import com.example.nguyenhuongit.qlnhahangapp.R;
+
+import org.json.JSONArray;
 
 import java.util.ArrayList;
 
@@ -37,15 +49,6 @@ public class FragmentNguyenLieu extends Fragment {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment FragmentOne.
-     */
-    // TODO: Rename and change types and number of parameters
     public static FragmentNguyenLieu newInstance(String param1, String param2) {
         FragmentNguyenLieu fragment = new FragmentNguyenLieu();
         Bundle args = new Bundle();
@@ -69,30 +72,63 @@ public class FragmentNguyenLieu extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.layout_fragment_tonkho, container, false);
         recyclerView = view.findViewById(R.id.recycleview_nguyenlieu);
-        getDataTest();
+        getDataNguyenLieu();
         return view;
     }
-
-    private void getDataTest() {
-        NguyenLieu nguyenLieu = new NguyenLieu("SP01", "Sản phẩm 01","Linh kiện","10");
-        nguyenLieuArrayList.add(nguyenLieu);
-        nguyenLieu = new NguyenLieu("SP02", "Sản phẩm 02","Bàn Phím","15");
-        nguyenLieuArrayList.add(nguyenLieu);
-        nguyenLieu = new NguyenLieu("SP03", "Sản phẩm 03","Chuột","20");
-        nguyenLieuArrayList.add(nguyenLieu);
-        nguyenLieu = new NguyenLieu("SP04", "Sản phẩm 04","Tai nghe","25");
-        nguyenLieuArrayList.add(nguyenLieu);
-        nguyenLieu = new NguyenLieu("SP05", "Sản phẩm 05","Ram","5");
-        nguyenLieuArrayList.add(nguyenLieu);
-        nguyenLieu = new NguyenLieu("SP06", "Sản phẩm 06","CPU","8");
-        nguyenLieuArrayList.add(nguyenLieu);
-
-        nguyenLieuAdapter = new NguyenLieuAdapter(getContext(), R.layout.item_custom_tonkho, nguyenLieuArrayList);
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext(),LinearLayoutManager.VERTICAL,false);
-        recyclerView.setLayoutManager(linearLayoutManager);
-        recyclerView.setItemAnimator(new DefaultItemAnimator());
-        recyclerView.setAdapter(nguyenLieuAdapter);
-        nguyenLieuAdapter.notifyDataSetChanged();
+    private void getDataNguyenLieu() {
+        String url = "http://www.mocky.io/v2/5cf3785c3300001818758534";
+        Log.d("ABC", url);
+        RequestQueue requestQueue = Volley.newRequestQueue(getContext());
+        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, url, null, new Response.Listener<JSONArray>() {
+            @Override
+            public void onResponse(JSONArray response) {
+//                String maNL;
+//                String tenNL;
+//                String maLoaiNL;
+//                String tonKhoNL;
+                NguyenLieu nguyenLieu = new NguyenLieu();
+                nguyenLieuArrayList.clear();
+                nguyenLieuArrayList= nguyenLieu.getListNguyenLieu(response.toString());
+//                Log.d("Arraylist", nguyenLieuArrayList.size()+"");
+//                for (NguyenLieu e: nguyenLieuArrayList)
+//                {
+//
+//                }
+//
+//                for(int i = 0; i< nguyenLieuArrayList.size(); i++)
+//                {
+//
+////                    maNL = nguyenLieuArrayList.get(i).getMaNguyenLieu().toString();
+////                    Log.d("MaNguyenLieu = ",maNL + ""+"GET()="+nguyenLieuArrayList.get(i).getMaNguyenLieu());
+////                    tenNL = nguyenLieuArrayList.get(i).getTenNguyenLieu().toString();
+////                    maLoaiNL = nguyenLieuArrayList.get(i).getMaLoaiNguyenLieu().toString();
+////                    tonKhoNL = nguyenLieuArrayList.get(i).getTonKho().toString();
+//
+//                    NguyenLieu nguyenLieu2 = new NguyenLieu(nguyenLieuArrayList.get(i).getMaNguyenLieu(),
+//                            nguyenLieuArrayList.get(i).getTenNguyenLieu(),
+//                            nguyenLieuArrayList.get(i).getTonKho(),
+//                            nguyenLieuArrayList.get(i).getMaLoaiNguyenLieu());
+//                    nguyenLieuArrayList.add(nguyenLieu2);
+//                    Log.d("SizenguyenLieuArrayList",nguyenLieuArrayList.size()+"");
+//                    Log.d("TENNL 1 = ",nguyenLieuArrayList.get(1)+"");
+//                }
+//                Log.d("Arraylist2 =", nguyenLieuArrayList.size()+"");
+                nguyenLieuAdapter = new NguyenLieuAdapter(getContext(),R.layout.item_custom_tonkho,nguyenLieuArrayList);
+                LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext(),LinearLayoutManager.VERTICAL, false);
+                recyclerView.setLayoutManager(linearLayoutManager);
+                recyclerView.setItemAnimator(new DefaultItemAnimator());
+                recyclerView.setAdapter(nguyenLieuAdapter);
+                nguyenLieuAdapter.notifyDataSetChanged();
+            }
+        },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(getContext(),"Error!!!",Toast.LENGTH_SHORT);
+                    }
+                }
+        );
+        requestQueue.add(jsonArrayRequest);
     }
 
     public void onButtonPressed(Uri uri) {

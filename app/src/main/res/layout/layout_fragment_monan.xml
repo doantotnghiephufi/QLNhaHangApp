@@ -4,8 +4,8 @@
     android:layout_height="match_parent"
     tools:context="com.example.nguyenhuongit.qlnhahangapp.View.Fragment.FragmentMonAn">
 
-    <com.github.mikephil.charting.charts.BarChart
-        android:id="@+id/barchart_monan"
+    <com.github.mikephil.charting.charts.CombinedChart
+        android:id="@+id/combinedchart_monan"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 </FrameLayout>

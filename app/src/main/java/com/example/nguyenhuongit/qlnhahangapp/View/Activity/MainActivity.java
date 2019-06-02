@@ -1,5 +1,6 @@
 package com.example.nguyenhuongit.qlnhahangapp.View.Activity;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -11,11 +12,13 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 import com.example.nguyenhuongit.qlnhahangapp.R;
 import com.example.nguyenhuongit.qlnhahangapp.View.Fragment.FragmentDoanhThu;
 import com.example.nguyenhuongit.qlnhahangapp.View.Fragment.FragmentHoTro;
-import com.example.nguyenhuongit.qlnhahangapp.View.Fragment.FragmentHoaDon;
+import com.example.nguyenhuongit.qlnhahangapp.View.Fragment.FragmentHome;
 import com.example.nguyenhuongit.qlnhahangapp.View.Fragment.FragmentKhachHang;
 import com.example.nguyenhuongit.qlnhahangapp.View.Fragment.FragmentMonAn;
 import com.example.nguyenhuongit.qlnhahangapp.View.Fragment.FragmentThucUong;
@@ -24,8 +27,8 @@ import com.example.nguyenhuongit.qlnhahangapp.View.Fragment.FragmentNguyenLieu;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, FragmentMonAn.OnFragmentInteractionListener,
         FragmentThucUong.OnFragmentInteractionListener, FragmentDoanhThu.OnFragmentInteractionListener, FragmentNguyenLieu.OnFragmentInteractionListener ,
-        FragmentHoaDon.OnFragmentInteractionListener, FragmentKhachHang.OnFragmentInteractionListener, FragmentHoTro.OnFragmentInteractionListener{
-
+        FragmentHome.OnFragmentInteractionListener, FragmentKhachHang.OnFragmentInteractionListener, FragmentHoTro.OnFragmentInteractionListener{
+    Button btn_Logout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,10 +36,20 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        btn_Logout = findViewById(R.id.btn_Logout);
+        btn_Logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
         if (savedInstanceState == null) {
             Fragment fragment = null;
             Class fragmentClass = null;
-            fragmentClass = FragmentMonAn.class;
+            fragmentClass = FragmentHome.class;
             try {
                 fragment = (Fragment) fragmentClass.newInstance();
             } catch (Exception e) {
@@ -45,7 +58,6 @@ public class MainActivity extends AppCompatActivity
             FragmentManager fragmentManager = getSupportFragmentManager();
             fragmentManager.beginTransaction().replace(R.id.flContent, fragment).commit();
         }
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -54,6 +66,7 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        navigationView.setItemIconTintList(null);
     }
 
     @Override
@@ -66,7 +79,6 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
-
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
@@ -74,8 +86,11 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
         Fragment fragment = null;
         String title = "Appname";
-
         Class fragmentClass = null;
+        if(id == R.id.nav_home){
+            fragmentClass = FragmentHome.class;
+            title = "Báo cáo thống kê";
+        }
         if (id == R.id.nav_hotfood) {
             fragmentClass = FragmentMonAn.class;
             title = "Thống kê món ăn";
@@ -87,13 +102,10 @@ public class MainActivity extends AppCompatActivity
             title = "Thống kê doanh thu";
         } else if (id == R.id.nav_tonkho) {
             fragmentClass = FragmentNguyenLieu.class;
-            title = "Thống kê tồn kho";
+            title = "Thống kê nguyên liệu";
         } else if (id == R.id.nav_customer) {
             fragmentClass = FragmentKhachHang.class;
             title = "Thống kê khách hàng";
-        } else if (id == R.id.nav_invoice) {
-            fragmentClass = FragmentHoaDon.class;
-            title = "Thống kê hóa đơn";
         } else if (id == R.id.nav_support) {
             fragmentClass = FragmentHoTro.class;
             title = "Hỗ trợ";
@@ -103,7 +115,6 @@ public class MainActivity extends AppCompatActivity
         } catch (Exception e) {
             e.printStackTrace();
         }
-
 
         FragmentManager fragmentManager = getSupportFragmentManager();
         fragmentManager.beginTransaction().replace(R.id.flContent, fragment).commit();

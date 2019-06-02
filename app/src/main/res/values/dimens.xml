@@ -5,4 +5,18 @@
     <dimen name="nav_header_vertical_spacing">8dp</dimen>
     <dimen name="nav_header_height">100dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
+    <dimen name="layout_margin_5dp">5dp</dimen>
+    <dimen name="layout_margin_10dp">10dp</dimen>
+    <dimen name="layout_margin_15dp">15dp</dimen>
+    <dimen name="layout_margin_20dp">20dp</dimen>
+    <dimen name="layout_margin_25dp">25dp</dimen>
+    <dimen name="layout_margin_30dp">30dp</dimen>
+    <dimen name="layout_margin_35dp">35dp</dimen>
+
+    <!--text size-->
+    <dimen name="text_size_12dp">12dp</dimen>
+    <dimen name="text_size_14dp">14dp</dimen>
+    <dimen name="text_size_16dp">16dp</dimen>
+    <dimen name="text_size_18dp">18dp</dimen>
+    <dimen name="text_size_26dp">26dp</dimen>
 </resources>

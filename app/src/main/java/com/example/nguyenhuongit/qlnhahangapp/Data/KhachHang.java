@@ -1,31 +1,83 @@
 package com.example.nguyenhuongit.qlnhahangapp.Data;
 
-public class KhachHang {
-    String TenKhachHang;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.reflect.TypeToken;
 
-    public KhachHang(String tenKhachHang, String SDTKhachHang) {
-        TenKhachHang = tenKhachHang;
-        this.SDTKhachHang = SDTKhachHang;
+import java.lang.reflect.Type;
+import java.util.ArrayList;
+
+public class KhachHang {
+
+    String MaKH,TenKH,SDT,TichLuy;
+
+    public KhachHang(String maKH, String tenKH, String SDT, String tichLuy) {
+        MaKH = maKH;
+        TenKH = tenKH;
+        this.SDT = SDT;
+        TichLuy = tichLuy;
     }
 
     public KhachHang() {
     }
 
-    public String getTenKhachHang() {
-        return TenKhachHang;
+    public String getMaKH() {
+        return MaKH;
     }
 
-    public void setTenKhachHang(String tenKhachHang) {
-        TenKhachHang = tenKhachHang;
+    public void setMaKH(String maKH) {
+        MaKH = maKH;
     }
 
-    public String getSDTKhachHang() {
-        return SDTKhachHang;
+    public String getTenKH() {
+        return TenKH;
     }
 
-    public void setSDTKhachHang(String SDTKhachHang) {
-        this.SDTKhachHang = SDTKhachHang;
+    public void setTenKH(String tenKH) {
+        TenKH = tenKH;
     }
 
-    String SDTKhachHang;
+    public String getSDT() {
+        return SDT;
+    }
+
+    public void setSDT(String SDT) {
+        this.SDT = SDT;
+    }
+
+    public String getTichLuy() {
+        return TichLuy;
+    }
+
+    public void setTichLuy(String tichLuy) {
+        TichLuy = tichLuy;
+    }
+
+    public KhachHang getKhachHang(String jsonString) {
+        Gson gson = new GsonBuilder()
+                .setDateFormat("yyyy-MM-dd'T'HH:mm:ss")
+                .create();
+        Type type = new TypeToken<KhachHang>() {
+        }.getType();
+        return gson.fromJson(jsonString, type);
+    }
+
+    public ArrayList<KhachHang> getListKhachHang(String jsonString) {
+        Gson gson = new GsonBuilder()
+                .setDateFormat("yyyy-MM-dd'T'HH:mm:ss")
+                .create();
+        Type type = new TypeToken<ArrayList<KhachHang>>() {
+        }.getType();
+        return gson.fromJson(jsonString, type);
+    }
+
+    @Override
+    public String toString() {
+        return "KhachHang{" +
+                "MaKH='" + MaKH + '\'' +
+                ", TenKH='" + TenKH + '\'' +
+                ", SDT='" + SDT + '\'' +
+                ", TichLuy='" + TichLuy + '\'' +
+                '}';
+    }
 }

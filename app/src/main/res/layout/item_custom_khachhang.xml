@@ -6,26 +6,80 @@
     android:orientation="vertical"
     android:layout_marginTop="2dp">
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="35dp"
-            android:id="@+id/tv_tenKH"
-            android:textAlignment="center"
-            android:padding="5dp"
-            android:text="Tên khách hàng demo"
-            android:textSize="18dp"/>
-        <TextView
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <!--Tên Khách hàng-->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="35dp"
+                    android:id="@+id/tv_tenKH"
+                    android:padding="5dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/text_name_KH"
+                    android:text="Tên khách hàng demo"
+                    android:textSize="20dp"/>
+            </LinearLayout>
+
+            <!--Tích lũy-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="end">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2,000,000"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:padding="5dp"
+                    android:gravity="end"
+                    android:id="@+id/tv_TichLuy"
+                    android:textColor="@color/text_title"/>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="35dp"
-            android:padding="5dp"
-            android:textAlignment="center"
-            android:id="@+id/tv_SDT"
-            android:text="Tên khách hàng demo"
-            android:textSize="18dp"/>
-    </LinearLayout>
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <!--Tên Khách hàng-->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="35dp"
+                    android:padding="5dp"
+                    android:textColor="@color/text_no_title"
+                    android:text="KH001"
+                    android:id="@+id/tv_maKH"
+                    android:textSize="16dp"/>
+            </LinearLayout>
+
+            <!--Tích lũy-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="end">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0912.131.131"
+                    android:textSize="16dp"
+                    android:padding="5dp"
+                    android:gravity="end"
+                    android:id="@+id/tv_SDT"
+                    android:textColor="@color/text_title"/>
+            </LinearLayout>
+        </LinearLayout>
+  </LinearLayout>
 
     <TextView
         android:layout_width="match_parent"
