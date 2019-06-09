@@ -10,19 +10,23 @@
         <item
             android:id="@+id/nav_hotfood"
             android:icon="@drawable/icon_monan"
-            android:title="Thống kê món ăn bán chạy" />
+            android:title="Món ăn bán chạy" />
         <item
             android:id="@+id/nav_hotdrink"
             android:icon="@drawable/icon_thucuong"
-            android:title="Thống kê thức uống bán chạy"/>
+            android:title="Thức uống bán chạy"/>
         <item
             android:id="@+id/nav_doanhthu"
             android:icon="@drawable/icon_doanhthu"
-            android:title="Thống kê doanh thu" />
+            android:title="Doanh thu" />
+        <item
+            android:id="@+id/nav_doanhthukhuvuc"
+            android:icon="@drawable/icon_doanhthu"
+            android:title="Doanh thu theo khu vực" />
         <item
             android:id="@+id/nav_tonkho"
             android:icon="@drawable/icon_stock"
-            android:title="Thống kê nguyên liệu" />
+            android:title="Nguyên liệu tồn kho" />
         <!--<item-->
             <!--android:id="@+id/nav_invoice"-->
             <!--android:icon="@drawable/icon_bill"-->

@@ -41,6 +41,8 @@ public class FragmentKhachHang extends Fragment {
     KhachHangAdapter khachHangAdapter;
     ArrayList<KhachHang> khachHangArrayList = new ArrayList<>();
 
+//    String IP_Config = "192.168.1.11";
+
     private OnFragmentInteractionListener mListener;
 
 
@@ -65,6 +67,7 @@ public class FragmentKhachHang extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -75,37 +78,22 @@ public class FragmentKhachHang extends Fragment {
     }
 
     private void getDataKhachHang() {
-        String url="http://www.mocky.io/v2/5cf370db330000181875852e";
+//        String url="http://www.mocky.io/v2/5cfc81c83200006700ccd3be";
+        String url = "http://192.168.1.11/api/ThongKe/ThongKeKhachHang";
         Log.d("ABC", url);
         RequestQueue requestQueue = Volley.newRequestQueue(getContext());
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, url, null, new Response.Listener<JSONArray>() {
             @Override
             public void onResponse(JSONArray response) {
-                String maKH;
-                String tenKH;
-                String sdtKH;
-                String tichLuyKH;
                 KhachHang khachHang = new KhachHang();
                 khachHangArrayList = khachHang.getListKhachHang(response.toString());
-//                Log.d("khachHangArrayList",khachHangArrayList.size()+"");
-//                for(int i = 0; i< response.length(); i++)
-//                {
-//
-//                    maKH = khachHangArrayList.get(i).getMaKH();
-//                    Log.d("makh", maKH);
-//                    tenKH = khachHangArrayList.get(i).getTenKH();
-//                    sdtKH = khachHangArrayList.get(i).getSDT();
-//                    tichLuyKH = khachHangArrayList.get(i).getTichLuy();
-//                    khachHang = new KhachHang(maKH,tenKH,sdtKH,tichLuyKH);
-//                    khachHangArrayList.add(khachHang);
-//
-//                }
                 khachHangAdapter = new KhachHangAdapter(getContext(),R.layout.item_custom_khachhang,khachHangArrayList);
                 LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext(),LinearLayoutManager.VERTICAL, false);
                 recyclerView.setLayoutManager(linearLayoutManager);
                 recyclerView.setItemAnimator(new DefaultItemAnimator());
                 recyclerView.setAdapter(khachHangAdapter);
                 khachHangAdapter.notifyDataSetChanged();
+
             }
         },
                 new Response.ErrorListener() {
@@ -115,6 +103,7 @@ public class FragmentKhachHang extends Fragment {
                     }
                 }
         );
+        Log.d("khachHangArrayList", khachHangArrayList.size() +"");
         requestQueue.add(jsonArrayRequest);
     }
 

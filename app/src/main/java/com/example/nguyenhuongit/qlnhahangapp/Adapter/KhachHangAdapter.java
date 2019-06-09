@@ -8,6 +8,7 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,8 +19,12 @@ import com.example.nguyenhuongit.qlnhahangapp.Data.KhachHang;
 import com.example.nguyenhuongit.qlnhahangapp.R;
 import com.example.nguyenhuongit.qlnhahangapp.View.Fragment.FragmentKhachHangDetails;
 
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.ArrayList;
+import java.util.Currency;
 import java.util.List;
+import java.util.Locale;
 
 public class KhachHangAdapter extends RecyclerView.Adapter<KhachHangAdapter.MyViewHolder> {
     private Context context;
@@ -34,6 +39,7 @@ public class KhachHangAdapter extends RecyclerView.Adapter<KhachHangAdapter.MyVi
         this.khachHangList = khachHangList;
         mLayoutInflater = LayoutInflater.from(context);
     }
+
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
@@ -47,7 +53,12 @@ public class KhachHangAdapter extends RecyclerView.Adapter<KhachHangAdapter.MyVi
         myViewHolder.tv_tenKH.setText(khachHang.getTenKH());
         myViewHolder.tv_SDT.setText(khachHang.getSDT());
         myViewHolder.tv_maKH.setText(khachHang.getMaKH());
-        myViewHolder.tv_TichLuy.setText(khachHang.getTichLuy());
+        float vnd = Float.parseFloat(khachHang.getTichLuy());
+        Locale localeVN = new Locale("vi", "VN");
+        NumberFormat numberFormat = NumberFormat.getCurrencyInstance(localeVN);
+        numberFormat.setCurrency(Currency.getInstance(localeVN));
+        String str1 = numberFormat.format(vnd);
+        myViewHolder.tv_TichLuy.setText(str1+"");
     }
 
     @Override

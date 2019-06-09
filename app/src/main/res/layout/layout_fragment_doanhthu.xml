@@ -11,6 +11,7 @@
         android:orientation="horizontal"
         android:padding="2dp"
         android:layout_marginBottom="5dp">
+        <!--title-->
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -32,6 +33,7 @@
                 android:textSize="18dp"
                 android:textStyle="bold"/>
         </LinearLayout>
+        <!--pick datetime-->
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -53,6 +55,7 @@
                 android:text="Chọn ngày kết thúc"
                 android:id="@+id/tv_ngayKT"/>
         </LinearLayout>
+        <!--button hiển thị-->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -70,7 +73,8 @@
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
         <com.github.mikephil.charting.charts.CombinedChart
             android:layout_width="match_parent"
             android:layout_height="match_parent"

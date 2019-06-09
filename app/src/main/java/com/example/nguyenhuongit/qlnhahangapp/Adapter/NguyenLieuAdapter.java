@@ -3,6 +3,7 @@ package com.example.nguyenhuongit.qlnhahangapp.Adapter;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -39,9 +40,12 @@ public class NguyenLieuAdapter extends RecyclerView.Adapter<NguyenLieuAdapter.My
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder myViewHolder, int i) {
         NguyenLieu nguyenLieu = nguyenLieuList.get(i);
-        myViewHolder.tv_mamon.setText(nguyenLieu.getMaNguyenLieu()+"");
+        myViewHolder.tv_mamon.setText(nguyenLieu.getMaNguyenLieu());
         myViewHolder.tv_tenmon.setText(nguyenLieu.getTenNguyenLieu());
-        myViewHolder.tv_soluongton.setText(nguyenLieu.getTonKho());
+
+
+//        Log.d("texttext", text);
+        myViewHolder.tv_soluongton.setText( Math.round(Float.parseFloat(nguyenLieu.getTonKho()))+"");
         myViewHolder.tv_loaimon.setText(nguyenLieu.getMaLoaiNguyenLieu());
     }
 

@@ -3,8 +3,6 @@ package com.example.nguyenhuongit.qlnhahangapp.View.Fragment;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,7 +10,7 @@ import android.view.ViewGroup;
 
 import com.example.nguyenhuongit.qlnhahangapp.R;
 
-public class FragmentHoTro extends Fragment {
+public class FragmentGioiThieu extends Fragment {
 
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
@@ -23,7 +21,7 @@ public class FragmentHoTro extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
-    public FragmentHoTro() {
+    public FragmentGioiThieu() {
         // Required empty public constructor
     }
 
@@ -36,8 +34,8 @@ public class FragmentHoTro extends Fragment {
      * @return A new instance of fragment FragmentOne.
      */
     // TODO: Rename and change types and number of parameters
-    public static FragmentHoTro newInstance(String param1, String param2) {
-        FragmentHoTro fragment = new FragmentHoTro();
+    public static FragmentGioiThieu newInstance(String param1, String param2) {
+        FragmentGioiThieu fragment = new FragmentGioiThieu();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);

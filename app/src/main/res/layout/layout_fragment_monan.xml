@@ -1,11 +1,78 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.example.nguyenhuongit.qlnhahangapp.View.Fragment.FragmentMonAn">
-
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="2dp"
+        android:layout_marginBottom="5dp">
+        <!--title-->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Từ ngày:"
+                android:padding="5dp"
+                android:textColor="@color/text_name_KH"
+                android:textSize="18dp"
+                android:textStyle="bold"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Đến ngày:"
+                android:padding="5dp"
+                android:textColor="@color/text_name_KH"
+                android:textSize="18dp"
+                android:textStyle="bold"/>
+        </LinearLayout>
+        <!--pick datetime-->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:padding="5dp"
+                android:textColor="@color/text_title"
+                android:textSize="18dp"
+                android:text="Chọn ngày bắt đầu"
+                android:id="@+id/tv_ngayBDMA"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:padding="5dp"
+                android:textColor="@color/text_title"
+                android:textSize="18dp"
+                android:text="Chọn ngày kết thúc"
+                android:id="@+id/tv_ngayKTMA"/>
+        </LinearLayout>
+        <!--button hiển thị-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="end"
+            android:layout_marginRight="20dp">
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hiển Thị"
+                android:id="@+id/btn_HienthiMA"
+                android:textAllCaps="false"
+                android:gravity="center"
+                android:layout_gravity="center_vertical"/>
+        </LinearLayout>
+    </LinearLayout>
     <com.github.mikephil.charting.charts.CombinedChart
         android:id="@+id/combinedchart_monan"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
-</FrameLayout>
+</LinearLayout>

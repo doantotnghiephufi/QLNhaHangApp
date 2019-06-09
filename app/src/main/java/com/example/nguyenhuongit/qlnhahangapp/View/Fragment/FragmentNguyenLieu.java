@@ -41,7 +41,8 @@ public class FragmentNguyenLieu extends Fragment {
     RecyclerView recyclerView;
     NguyenLieuAdapter nguyenLieuAdapter;
     ArrayList<NguyenLieu> nguyenLieuArrayList = new ArrayList<>();
-
+    String IP_Config = "192.168.1.11";
+//    String url = "http://www.mocky.io/v2/5cfc806d3200005900ccd3bb";
 
     private OnFragmentInteractionListener mListener;
 
@@ -76,43 +77,17 @@ public class FragmentNguyenLieu extends Fragment {
         return view;
     }
     private void getDataNguyenLieu() {
-        String url = "http://www.mocky.io/v2/5cf3785c3300001818758534";
+        String url = "http://192.168.1.11/api/ThongKe/ThongKeNguyenLieu";
         Log.d("ABC", url);
         RequestQueue requestQueue = Volley.newRequestQueue(getContext());
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, url, null, new Response.Listener<JSONArray>() {
             @Override
             public void onResponse(JSONArray response) {
-//                String maNL;
-//                String tenNL;
-//                String maLoaiNL;
-//                String tonKhoNL;
+//
                 NguyenLieu nguyenLieu = new NguyenLieu();
                 nguyenLieuArrayList.clear();
                 nguyenLieuArrayList= nguyenLieu.getListNguyenLieu(response.toString());
-//                Log.d("Arraylist", nguyenLieuArrayList.size()+"");
-//                for (NguyenLieu e: nguyenLieuArrayList)
-//                {
-//
-//                }
-//
-//                for(int i = 0; i< nguyenLieuArrayList.size(); i++)
-//                {
-//
-////                    maNL = nguyenLieuArrayList.get(i).getMaNguyenLieu().toString();
-////                    Log.d("MaNguyenLieu = ",maNL + ""+"GET()="+nguyenLieuArrayList.get(i).getMaNguyenLieu());
-////                    tenNL = nguyenLieuArrayList.get(i).getTenNguyenLieu().toString();
-////                    maLoaiNL = nguyenLieuArrayList.get(i).getMaLoaiNguyenLieu().toString();
-////                    tonKhoNL = nguyenLieuArrayList.get(i).getTonKho().toString();
-//
-//                    NguyenLieu nguyenLieu2 = new NguyenLieu(nguyenLieuArrayList.get(i).getMaNguyenLieu(),
-//                            nguyenLieuArrayList.get(i).getTenNguyenLieu(),
-//                            nguyenLieuArrayList.get(i).getTonKho(),
-//                            nguyenLieuArrayList.get(i).getMaLoaiNguyenLieu());
-//                    nguyenLieuArrayList.add(nguyenLieu2);
-//                    Log.d("SizenguyenLieuArrayList",nguyenLieuArrayList.size()+"");
-//                    Log.d("TENNL 1 = ",nguyenLieuArrayList.get(1)+"");
-//                }
-//                Log.d("Arraylist2 =", nguyenLieuArrayList.size()+"");
+
                 nguyenLieuAdapter = new NguyenLieuAdapter(getContext(),R.layout.item_custom_tonkho,nguyenLieuArrayList);
                 LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext(),LinearLayoutManager.VERTICAL, false);
                 recyclerView.setLayoutManager(linearLayoutManager);

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginTop="2dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="Mã HĐ:"
+                android:textStyle="bold"
+                android:textSize="14dp"
+                android:textColor="@color/text_no_title"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:id="@+id/tv_maHD"
+                android:padding="5dp"
+                android:textStyle="bold"
+                android:textColor="@color/text_name_KH"
+                android:text="Tên nguyên liệu"
+                android:textSize="16dp"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="Giờ Thanh Toán:"
+                android:textStyle="bold"
+                android:textSize="14dp"
+                android:textColor="@color/text_no_title"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:id="@+id/tv_gioThanhToan"
+                android:padding="5dp"
+                android:textStyle="bold"
+                android:textColor="@color/text_title"
+                android:text="Tên nguyên liệu"
+                android:textSize="16dp"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="Thành Tiền:"
+                android:textStyle="bold"
+                android:textSize="14dp"
+                android:textColor="@color/text_no_title"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:id="@+id/tv_thanhTien"
+                android:padding="5dp"
+                android:textStyle="bold"
+                android:textColor="@color/text_title"
+                android:text="Tên nguyên liệu"
+                android:textSize="16dp"/>
+        </LinearLayout>
+    </LinearLayout>
+        <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:id="@+id/tv_bottom_details_list"
+        android:layout_marginTop="5dp"
+        android:background="@color/color_white"/>
+</LinearLayout>

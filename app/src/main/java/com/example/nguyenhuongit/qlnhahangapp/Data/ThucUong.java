@@ -9,32 +9,43 @@ import java.util.ArrayList;
 
 public class ThucUong {
 
-    String MaMonAn,TenMonAn, TongDat;
+    @Override
+    public String toString() {
+        return "ThucUong{" +
+                "MaThucUong='" + MaThucUong + '\'' +
+                ", TenThucUong='" + TenThucUong + '\'' +
+                ", TongDat='" + TongDat + '\'' +
+                '}';
+    }
 
-    public ThucUong(String maMonAn, String tenMonAn, String tongDat) {
-        MaMonAn = maMonAn;
-        TenMonAn = tenMonAn;
+    public ThucUong(String maThucUong, String tenThucUong, String tongDat) {
+        MaThucUong = maThucUong;
+        TenThucUong = tenThucUong;
         TongDat = tongDat;
     }
+
+    public String getMaThucUong() {
+        return MaThucUong;
+    }
+
+    public void setMaThucUong(String maThucUong) {
+        MaThucUong = maThucUong;
+    }
+
+    public String getTenThucUong() {
+        return TenThucUong;
+    }
+
+    public void setTenThucUong(String tenThucUong) {
+        TenThucUong = tenThucUong;
+    }
+
+    String MaThucUong,TenThucUong, TongDat;
+
 
     public ThucUong() {
     }
 
-    public String getMaMonAn() {
-        return MaMonAn;
-    }
-
-    public void setMaMonAn(String maMonAn) {
-        MaMonAn = maMonAn;
-    }
-
-    public String getTenMonAn() {
-        return TenMonAn;
-    }
-
-    public void setTenMonAn(String tenMonAn) {
-        TenMonAn = tenMonAn;
-    }
 
     public String getTongDat() {
         return TongDat;

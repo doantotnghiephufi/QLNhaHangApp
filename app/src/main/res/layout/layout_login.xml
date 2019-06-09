@@ -34,9 +34,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_marginTop="50dp"
-        android:layout_marginLeft="50dp"
-        android:layout_marginRight="50dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
         android:layout_marginBottom="30dp"
         android:layout_gravity="center"
         android:background="@drawable/layout_custom_background">
@@ -105,7 +105,9 @@
                     android:layout_height="match_parent"
                     android:layout_margin="5dp"
                     android:background="@color/color_white"
+                    android:id="@+id/edt_signin_password"
                     android:hint="Mật khẩu"
+                    android:inputType="textPassword"
                     android:textColor="@color/color_black"
                     android:textSize="@dimen/text_size_14dp" />
             </RelativeLayout>
@@ -124,7 +126,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/txt_forgot_password"
                 android:text="Quên mật khẩu?"
-                android:textColor="@color/text_no_title"
+                android:textColor="@color/text_name_KH"
                 android:textStyle="italic"
                 android:textSize="12dp" />
         </LinearLayout>

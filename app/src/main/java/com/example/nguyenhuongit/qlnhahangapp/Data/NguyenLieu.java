@@ -16,7 +16,7 @@ public class NguyenLieu {
         this.MaNguyenLieu = maNguyenLieu;
         TenNguyenLieu = tenNguyenLieu;
         TonKho = tonKho;
-        MaLoaiNguyenLieu = maLoaiNguyenLieu;
+        TenLoaiNguyenLieu = maLoaiNguyenLieu;
     }
 
     public NguyenLieu() {
@@ -47,14 +47,14 @@ public class NguyenLieu {
     }
 
     public String getMaLoaiNguyenLieu() {
-        return MaLoaiNguyenLieu;
+        return TenLoaiNguyenLieu;
     }
 
     public void setMaLoaiNguyenLieu(String maLoaiNguyenLieu) {
-        MaLoaiNguyenLieu = maLoaiNguyenLieu;
+        TenLoaiNguyenLieu = maLoaiNguyenLieu;
     }
 
-    String MaLoaiNguyenLieu;
+    String TenLoaiNguyenLieu;
 
     @Override
     public String toString() {
@@ -62,7 +62,7 @@ public class NguyenLieu {
                 "MaNguyenLieu='" + MaNguyenLieu + '\'' +
                 ", TenNguyenLieu='" + TenNguyenLieu + '\'' +
                 ", TonKho='" + TonKho + '\'' +
-                ", MaLoaiNguyenLieu='" + MaLoaiNguyenLieu + '\'' +
+                ", MaLoaiNguyenLieu='" + TenLoaiNguyenLieu + '\'' +
                 '}';
     }
 
